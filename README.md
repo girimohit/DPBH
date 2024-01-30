@@ -10,6 +10,8 @@ This GitHub repository houses the solution developed by Cascading Coders for the
 
 We are Cascading Coders, a team of passionate and creative individuals dedicated to making a positive impact in the digital space. Our team is driven by the mission to create ethical solutions that contribute to a safer and more transparent online environment.
 
+To Clone the repository: `git clone https://github.com/NimishKr16/CascadingCoders_DPBH23.git`
+
 ## Solution
 
 ### Description
@@ -17,7 +19,7 @@ We are Cascading Coders, a team of passionate and creative individuals dedicated
 Our solution is designed to identify and combat dark patterns on e-commerce platforms. We have developed an innovative application that analyzes the user interface and user interactions to detect deceptive design practices. The solution provides insights into the types and scale of dark patterns employed, enabling users to make informed decisions.
 
 ### Features
-## Note: The Extension-Designing Branch has the required files for using and testing the extension. The development is still underway.
+## Note: The `/Extension` directory has all the required files for using and testing the extension. The development is still underway.
 
 1. **User Interface Deception Detection:**
    - Our solution adeptly identifies deceptive interfaces, ensuring users aren't misled during interactions.
