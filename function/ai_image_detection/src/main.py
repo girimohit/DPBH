@@ -3,8 +3,8 @@
 import argparse
 import torch
 from PIL import Image
-from model import get_model 
-from custom_dataset import get_transform 
+from function.ai_image_detection.src.model import get_model 
+from function.ai_image_detection.src.custom_dataset import get_transform 
 import glob
 import os
 import requests

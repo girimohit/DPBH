@@ -7,36 +7,34 @@ html {
   color: white;
   width: 400px;
 }
+
 body {
   font-family: "Arial", sans-serif;
   margin: 10px;
-  
 }
 
 h1 {
   text-align: center;
 }
 
-
-#maliciousScanDiv, #reviewResultDiv{
-    text-align: center;
-    /* margin-right: 98px; */
-   
+#maliciousScanDiv,
+#reviewResultDiv {
+  text-align: center;
+  /* margin-right: 98px; */
 }
 
-#result{
-    font-size: 0.9rem;    
-    font-weight: bold;
-    padding: 8%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-right: 220px;
+#result {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 220px;
 }
 
-
-#displayedImage{
+#displayedImage {
   max-width: 5px;
   height: auto;
 }
@@ -45,22 +43,21 @@ h1 {
   display: none;
 }
 
-
-img{
+img {
   width: 500px;
   height: 400px;
 }
 
-h1{
+h1 {
   color: rgb(14, 194, 218);
   font-weight: bold;
   text-shadow: 0 0 20px rgb(0, 255, 119);
   margin-top: -45px;
   -webkit-text-stroke-width: 0.0025px;
--webkit-text-stroke-color: rgb(0, 0, 0);
+  -webkit-text-stroke-color: rgb(0, 0, 0);
 }
 
-#myicon{
+#myicon {
   width: 50px;
   height: 50px;
   size: 60px;
@@ -69,14 +66,14 @@ h1{
 
 /* ---------------- SCAN BUTTON STYLE  -----------------  */
 
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
 
-button{
+button {
   padding: 25px 30px;
   background-color: #050801;
   color: #03e9f4;
   font-weight: bold;
-  border: 2px solid #0FF0FC;
+  border: 2px solid #0ff0fc;
   border-radius: 5px;
   letter-spacing: 4px;
   overflow: hidden;
@@ -91,16 +88,13 @@ button{
   margin-right: 85px;
 }
 
-button:hover{
-    background: #03e9f4;
-    color: #050801;
-    box-shadow: 0 0 5px #03e9f4,
-                0 0 25px #03e9f4,
-                0 0 50px #03e9f4,
-                0 0 200px #03e9f4;
-     -webkit-box-reflect:below 1px linear-gradient(transparent, #0005);
+button:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+    0 0 200px #03e9f4;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
 }
-
 
 /* ----------- Image URL Input form ----------*/
 
@@ -137,10 +131,13 @@ button:hover{
   cursor: pointer;
   border-radius: 2px;
   border: 2px solid #5fb3e3;
-  position: absolute; /* Added */
-  left: -10px; /* Adjusted */
-  background-color: black; /* Lighter blue color */
-  font-family: "Arial", sans-serif; 
+  position: absolute;
+  /* Added */
+  left: -10px;
+  /* Adjusted */
+  background-color: black;
+  /* Lighter blue color */
+  font-family: "Arial", sans-serif;
   width: 20%;
   height: 10%;
   size: 10%;
@@ -155,8 +152,6 @@ button:hover{
   background: var(--button-bg-color);
   color: var(--button-text-color);
 }
-
-
 
 /* Helper */
 .url-container {
@@ -175,14 +170,17 @@ button:hover{
 
 /* Form */
 .form__field {
-  width: 160px; /* Adjusted width */
+  width: 160px;
+  /* Adjusted width */
   background: black;
   color: var(--input-text-color);
   font: inherit;
   border: 2px solid var(--button-bg-color);
   border-radius: 4px;
-  padding: 6px 10px; /* Adjusted padding */
-  margin-right: -20px; /* Adjusted */
+  padding: 6px 10px;
+  /* Adjusted padding */
+  margin-right: -20px;
+  /* Adjusted */
   transition: border-color 0.3s ease-in-out;
   font-family: "Arial", sans-serif;
   z-index: 0;

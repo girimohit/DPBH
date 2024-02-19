@@ -8,7 +8,7 @@ import urllib.parse
 import pandas as pd
 import sys
 
-sys.path.append('function/ai-image-detector/src/')
+sys.path.append("function/ai-image-detector/src/")
 
 
 # Importing custom functions
@@ -17,9 +17,9 @@ from function.reviewCheck import aichecker
 from function.screenshot import get_screenshot
 from function.rflow import prediction
 from function.ajioScrape import Ajio_get_tags
-from function.relianceScrape import  Reliance_get_tags,Reliance_get_reviews
+from function.relianceScrape import Reliance_get_tags, Reliance_get_reviews
 from function.attchecker import check_attr
-from main import checkimg
+from function.ai_image_detection.src.main import checkimg
 
 app = Flask(__name__)
 CORS(app)
@@ -64,7 +64,6 @@ def scan_threat():
     result_message = f"Webpage is : {category}"
     print(result_message)
     return jsonify({"message": result_message})
-   
 
 
 # -------------------------- REVIEW SCANNER FUNCTION ------------------------- #
@@ -96,6 +95,7 @@ def scan_review(taburl, attributes, reviews):
 
 # -------------------------- CSV OPERATION FUNCTION -------------------------- #
 
+
 def csv_operations(dict1, dict2, csvpath):
 
     final_dict = {**dict1, **dict2}
@@ -120,36 +120,37 @@ def csv_operations(dict1, dict2, csvpath):
 
 # ----------------------- FINAL ATTRIBUTE SCAN FUNCTION ---------------------- #
 
+
 @app.route("/scan", methods=["POST"])
 def check_all():
     data = request.get_json()
     taburl = data.get("url", "URL not found")
 
-    supported = ["myntra","ajio","reliancedigital"]
+    supported = ["myntra", "ajio", "reliancedigital"]
     websitename = None
     for website in supported:
         if website in taburl:
             websitename = website
             break
-    
+
     attributes = None
     reviews = []
 
-    if websitename == supported[0]: # Myntra
+    if websitename == supported[0]:  # Myntra
         attributes = get_tags(taburl)
         reviews = get_reviews(taburl)
 
-    elif websitename == supported[1]: # Ajio
+    elif websitename == supported[1]:  # Ajio
         attributes = Ajio_get_tags(taburl)
 
-    elif websitename == supported[2]: # Reliance Digital
+    elif websitename == supported[2]:  # Reliance Digital
         attributes = Reliance_get_tags(taburl)
         reviews = Reliance_get_reviews(taburl)
 
     csvpath = "./test.csv"
 
     reviews_scan = None
-    attribute_presence = check_attr(attrdict=attributes,taburl=taburl,reviews=reviews)
+    attribute_presence = check_attr(attrdict=attributes, taburl=taburl, reviews=reviews)
 
     if websitename == supported[0]:
         csv_op = csv_operations(attributes, reviews, csvpath)
@@ -164,38 +165,45 @@ def check_all():
 
 # -------------------------- GET UI ELEMENTS FUNCTION ------------------------- #
 
+
 @app.route("/uiscan", methods=["POST"])
 def uiscan():
     data = request.get_json()
     taburl = data.get("url", "URL not found")
-    get_screenshot(url = taburl)
+    get_screenshot(url=taburl)
     prediction()
     image_path = "prediction.jpg"
 
-    return jsonify({
-        'message1': 'UI Scan successful',
-        'message2': 'All UI-Elements Found!',
-        'imagePath': image_path
-    })
+    return jsonify(
+        {
+            "message1": "UI Scan successful",
+            "message2": "All UI-Elements Found!",
+            "imagePath": image_path,
+        }
+    )
+
 
 # ------------------ AI Image Check Function ----------------------------- #
 
-@app.route('/check', methods=['POST'])
+
+@app.route("/check", methods=["POST"])
 def check_image():
     data = request.json
-    image_url = data.get('imageUrl')
+    image_url = data.get("imageUrl")
     print(image_url)
     # Process the image URL
-    
+
     result = process_image(image_url)
     return jsonify(result)
+
 
 def process_image(image_url):
     # process image here
     # Return a dictionary
     predictedlab = checkimg(image_url)
     result = "Real" if predictedlab == "real" else "AI-Generated"
-    return {'status': result, 'message': 'Image processed successfully'}
+    return {"status": result, "message": "Image processed successfully"}
+
 
 # ------------------------------- MAIN FUNCTION ------------------------------ #
 if __name__ == "__main__":

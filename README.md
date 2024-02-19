@@ -1,7 +1,9 @@
 ![Image from repository](logo.png)
 
 # DΛRK ꝊPS
+
 ## By: Cascading Coders
+
 ## For: Dark Patterns Buster Hackathon
 
 To Clone the repository: `git clone https://github.com/NimishKr16/DarkOPS.git`
@@ -20,38 +22,45 @@ We are Cascading Coders, a team of passionate and creative individuals dedicated
 
 Our solution is designed to identify and combat dark patterns on e-commerce platforms. We have developed an innovative application that analyzes the user interface and user interactions to detect deceptive design practices. The solution provides insights into the types and scale of dark patterns employed, enabling users to make informed decisions.
 
-
 ## Note: The `DarkOPS` (Parent directory) has all the required files for using and testing the extension. The development is still underway.
+
 ## Features
+
 1. **User Interface Deception Detection:**
+
    - Our solution adeptly identifies deceptive interfaces, ensuring users aren't misled during interactions.
 
 2. **Subscription Trickery Algorithm:**
+
    - Employing a sophisticated algorithm, we uncover websites using misleading strategies for subscriptions and charges.
 
 3. **Accurate Product Information Analysis:**
+
    - Our system ensures accurate product details, preventing omissions, inaccuracies, or intentional disguises.
 
 4. **Forced Account Creation Identification:**
+
    - Detect websites unnecessarily requiring user registration, streamlining the checkout process.
 
 5. **Evaluation of Limited User Choice:**
+
    - We assess how e-commerce sites limit choices, redirecting users towards specific goods or services.
 
 6. **Transparent Product Information System:**
+
    - Our solution prevents crucial information from being omitted or disguised in product listings.
 
 7. **Fake Urgency and Scarcity Detection:**
+
    - Intelligent detection of fake timers and stock indicators, preventing false urgency and scarcity.
 
 8. **Hidden Costs Identification:**
+
    - Effectively identify undisclosed fees, taxes, or charges during the checkout process.
 
 9. **Dark Patterns in User Reviews Scrutiny:**
+
    - Our solution scrutinizes user-generated content for signs of manipulated or fake reviews.
 
 10. **Data Transparency Compliance Assessment:**
     - Robust algorithm to assess e-commerce platforms' compliance with data transparency regulations, flagging potential violations.
-
-
-
